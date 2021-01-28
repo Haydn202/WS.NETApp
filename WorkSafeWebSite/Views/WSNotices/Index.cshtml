@@ -13,22 +13,31 @@
     <thead>
         <tr>
             <th>
-                Business Name
+                @Html.DisplayNameFor(model => model.business_Name)
             </th>
             <th>
-                Business Number
+                @Html.DisplayNameFor(model => model.business_Number)
             </th>
             <th>
-                location
-            </th>         
-            <th>
-                Date Issued)
-            </th>        
-            <th>
-                Notice Type
+                @Html.DisplayNameFor(model => model.location)
             </th>
             <th>
-                Topic
+                @Html.DisplayNameFor(model => model.industry)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.date_Issued)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.issued_To)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.notice_Type)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.topic)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.pdf_URL)
             </th>
             <th></th>
         </tr>
@@ -44,10 +53,16 @@
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.location)
-            </td>         
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.industry)
+            </td>
             <td>
                 @Html.DisplayFor(modelItem => item.date_Issued)
-            </td>         
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.issued_To)
+            </td>
             <td>
                 @Html.DisplayFor(modelItem => item.notice_Type)
             </td>
@@ -55,7 +70,12 @@
                 @Html.DisplayFor(modelItem => item.topic)
             </td>
             <td>
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a>    
+                @Html.DisplayFor(modelItem => item.pdf_URL)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
             </td>
         </tr>
 }
