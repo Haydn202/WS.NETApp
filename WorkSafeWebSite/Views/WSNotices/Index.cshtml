@@ -1,0 +1,63 @@
+﻿@model IEnumerable<WorkSafeWebSite.Models.WSNotice>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Business Name
+            </th>
+            <th>
+                Business Number
+            </th>
+            <th>
+                location
+            </th>         
+            <th>
+                Date Issued)
+            </th>        
+            <th>
+                Notice Type
+            </th>
+            <th>
+                Topic
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.business_Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.business_Number)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.location)
+            </td>         
+            <td>
+                @Html.DisplayFor(modelItem => item.date_Issued)
+            </td>         
+            <td>
+                @Html.DisplayFor(modelItem => item.notice_Type)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.topic)
+            </td>
+            <td>
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a>    
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
