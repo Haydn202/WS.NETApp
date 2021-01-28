@@ -70,7 +70,12 @@
                 @Html.DisplayFor(modelItem => item.topic)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.pdf_URL)
+                @*@Html.DisplayFor(modelItem => item.pdf_URL)*@
+                @* Load pdf_URL from database and put into Model. Test if this link is working or not *@
+                <a href='@Url.Content("~/PDF_Folder/"+ item.pdf_URL)' target="_blank">
+                    item.pdf_URL
+                </a>
+
             </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
