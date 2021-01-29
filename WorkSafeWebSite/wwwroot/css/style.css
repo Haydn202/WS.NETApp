@@ -1,0 +1,81 @@
+﻿.filterDiv {
+    float: left;
+    background-color: #2196F3;
+    color: #ffffff;
+    width: 24%;
+    text-align: center;
+    margin: 2px;
+    display: none;
+    line-height: 20px;
+    min-height: 80px;
+    padding-top: 23px;
+}
+
+.show {
+    display: block;
+}
+
+.TopicandIndustryContainer {
+    margin-top: 20px;
+    overflow: hidden;
+}
+
+.btn {
+    border: none;
+    outline: none;
+    padding: 12px 16px;
+    background-color: #f1f1f1;
+    cursor: pointer;
+}
+
+    .btn:hover {
+        background-color: #ddd;
+    }
+
+    .btn.active {
+        background-color: #666;
+        color: white;
+    }
+
+    h2.headertekst {
+        text-align: center;
+    }
+
+    .container {
+        margin-top: 20px;
+        overflow: hidden;
+    }
+
+    thead,
+    tfoot {
+        background-color: #3f87a6;
+        color: #fff;
+    }
+
+    tbody {
+        background-color: #e4f0f5;
+    }
+
+    caption {
+        padding: 10px;
+        caption-side: bottom;
+    }
+
+    table {
+        border-collapse: collapse;
+        border: 2px solid rgb(200, 200, 200);
+        letter-spacing: 1px;
+        font-family: sans-serif;
+        font-size: .8rem;
+    }
+
+    td,
+    th {
+        border: 1px solid rgb(190, 190, 190);
+        padding: 5px 10px;
+    }
+
+    td {
+        text-align: center;
+    }
+

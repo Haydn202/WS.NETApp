@@ -9,7 +9,7 @@
 <p>
     <a asp-action="Create">Create New</a>
 </p>
-<table class="table">
+<table>
     <thead>
         <tr>
             <th>
@@ -43,46 +43,47 @@
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.business_Name)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.business_Number)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.location)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.industry)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.date_Issued)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.issued_To)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.notice_Type)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.topic)
-            </td>
-            <td>
-                @*@Html.DisplayFor(modelItem => item.pdf_URL)*@
-                @* Load pdf_URL from database and put into Model. Test if this link is working or not *@
-                <a href='@Url.Content("~/PDF_Folder/"+ item.pdf_URL)' target="_blank">
-                    item.pdf_URL
-                </a>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.business_Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.business_Number)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.location)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.industry)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.date_Issued)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.issued_To)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.notice_Type)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.topic)
+                </td>
+                <td>
+                    @*@Html.DisplayFor(modelItem => item.pdf_URL)*@
+                    @* Load pdf_URL from database and put into Model. Test if this link is working or not *@
+                    <a href='@Url.Content("~/PDF_Folder/"+ item.pdf_URL)' target="_blank">
+                        item.pdf_URL
+                    </a>
 
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-            </td>
-        </tr>
-}
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                </td>
+            </tr>
+        }
     </tbody>
 </table>
