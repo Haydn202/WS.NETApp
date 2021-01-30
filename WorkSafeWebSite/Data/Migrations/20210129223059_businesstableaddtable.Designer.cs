@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using WorkSafeWebSite.Data;
 
 namespace WorkSafeWebSite.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20210129223059_businesstableaddtable")]
+    partial class businesstableaddtable
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -241,30 +243,6 @@ namespace WorkSafeWebSite.Data.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Business");
-                });
-
-            modelBuilder.Entity("WorkSafeWebSite.Models.PCBU", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .UseIdentityColumn();
-
-                    b.Property<string>("business_Name")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("business_Number")
-                        .HasColumnType("int");
-
-                    b.Property<string>("industry")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("location")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("PCBU");
                 });
 
             modelBuilder.Entity("WorkSafeWebSite.Models.WSNotice", b =>

@@ -10,55 +10,39 @@ using WorkSafeWebSite.Models;
 
 namespace WorkSafeWebSite.Controllers
 {
-    public class WSNoticesController : Controller
+    public class PCBUsController : Controller
     {
         private readonly ApplicationDbContext _context;
 
-        public WSNoticesController(ApplicationDbContext context)
+        public PCBUsController(ApplicationDbContext context)
         {
             _context = context;
         }
 
-        // GET: WSNotices
+        // GET: PCBUs
         public async Task<IActionResult> Index()
         {
-            return View(await _context.WSNotice.ToListAsync());
+            return View(await _context.PCBU.ToListAsync());
         }
 
-        public async Task<IActionResult> ShowSearchForm()
-        {
-            return View();
-        }
-
-        // Shows search results on index page
-        public async Task<IActionResult> ShowSearchResults(string Search_Phrase, string Search_Location)
+        public async Task<IActionResult> ShowSearchResultsPCBU(string Search_Phrase, string Search_Location)
         {
             if (Search_Location != null)
             {
                 return View("Index", await _context.PCBU.Where(n => n.business_Name.Contains(Search_Phrase) & n.location.Contains(Search_Location)).ToListAsync());
             }
+            if (Search_Phrase != null)
+            {
+                return View("Index", await _context.PCBU.Where(n => n.location.Contains(Search_Location)).ToListAsync());
+            }
             else
             {
                 return View("Index", await _context.PCBU.Where(n => n.business_Name.Contains(Search_Phrase)).ToListAsync());
             }
-            
+
         }
 
-        public async Task<IActionResult> ViewCompanyNotices(int? id)
-        {
-            //Takes Id of company clicked and finds it in the company db, then uses that to create a string with the propper company name.
-            var pCBU = await _context.PCBU.FirstOrDefaultAsync(m => m.Id == id);
-            string name = pCBU.business_Name;
-            //finds that companies notices and displays them.
-            return View("ViewCompanyNotices", await _context.WSNotice.Where(n => n.business_Name.Equals(name)).ToListAsync());
-        }
-
-        public async Task<IActionResult> ShowSearchResultsWithTopic(string Search_Phrase, string Search_Topic)
-        {
-            return View("Index", await _context.WSNotice.Where(n => n.business_Name.Contains(Search_Phrase) & n.business_Name.Contains(Search_Topic)).ToListAsync());
-        }
-
-        // GET: WSNotices/Details/5
+        // GET: PCBUs/Details/5
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -66,39 +50,39 @@ namespace WorkSafeWebSite.Controllers
                 return NotFound();
             }
 
-            var wSNotice = await _context.WSNotice
+            var pCBU = await _context.PCBU
                 .FirstOrDefaultAsync(m => m.Id == id);
-            if (wSNotice == null)
+            if (pCBU == null)
             {
                 return NotFound();
             }
 
-            return View(wSNotice);
+            return View(pCBU);
         }
 
-        // GET: WSNotices/Create
+        // GET: PCBUs/Create
         public IActionResult Create()
         {
             return View();
         }
 
-        // POST: WSNotices/Create
+        // POST: PCBUs/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,business_Name,business_Number,location,industry,date_Issued,issued_To,notice_Type,topic,pdf_URL")] WSNotice wSNotice)
+        public async Task<IActionResult> Create([Bind("Id,business_Number,business_Name,location,industry")] PCBU pCBU)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(wSNotice);
+                _context.Add(pCBU);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            return View(wSNotice);
+            return View(pCBU);
         }
 
-        // GET: WSNotices/Edit/5
+        // GET: PCBUs/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -106,22 +90,22 @@ namespace WorkSafeWebSite.Controllers
                 return NotFound();
             }
 
-            var wSNotice = await _context.WSNotice.FindAsync(id);
-            if (wSNotice == null)
+            var pCBU = await _context.PCBU.FindAsync(id);
+            if (pCBU == null)
             {
                 return NotFound();
             }
-            return View(wSNotice);
+            return View(pCBU);
         }
 
-        // POST: WSNotices/Edit/5
+        // POST: PCBUs/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,business_Name,business_Number,location,industry,date_Issued,issued_To,notice_Type,topic,pdf_URL")] WSNotice wSNotice)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,business_Number,business_Name,location,industry")] PCBU pCBU)
         {
-            if (id != wSNotice.Id)
+            if (id != pCBU.Id)
             {
                 return NotFound();
             }
@@ -130,12 +114,12 @@ namespace WorkSafeWebSite.Controllers
             {
                 try
                 {
-                    _context.Update(wSNotice);
+                    _context.Update(pCBU);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!WSNoticeExists(wSNotice.Id))
+                    if (!PCBUExists(pCBU.Id))
                     {
                         return NotFound();
                     }
@@ -146,10 +130,10 @@ namespace WorkSafeWebSite.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            return View(wSNotice);
+            return View(pCBU);
         }
 
-        // GET: WSNotices/Delete/5
+        // GET: PCBUs/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -157,30 +141,30 @@ namespace WorkSafeWebSite.Controllers
                 return NotFound();
             }
 
-            var wSNotice = await _context.WSNotice
+            var pCBU = await _context.PCBU
                 .FirstOrDefaultAsync(m => m.Id == id);
-            if (wSNotice == null)
+            if (pCBU == null)
             {
                 return NotFound();
             }
 
-            return View(wSNotice);
+            return View(pCBU);
         }
 
-        // POST: WSNotices/Delete/5
+        // POST: PCBUs/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var wSNotice = await _context.WSNotice.FindAsync(id);
-            _context.WSNotice.Remove(wSNotice);
+            var pCBU = await _context.PCBU.FindAsync(id);
+            _context.PCBU.Remove(pCBU);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
-        private bool WSNoticeExists(int id)
+        private bool PCBUExists(int id)
         {
-            return _context.WSNotice.Any(e => e.Id == id);
+            return _context.PCBU.Any(e => e.Id == id);
         }
     }
 }
