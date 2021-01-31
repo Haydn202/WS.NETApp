@@ -6653,7 +6653,14 @@ img.rsImg {
 }
 
 .search-form__input-wrapper {
+    float: left;
     position: relative;
+   
+}
+
+
+.text search-form__field {
+    display: inline-block;
 }
 
 .search-form__field {

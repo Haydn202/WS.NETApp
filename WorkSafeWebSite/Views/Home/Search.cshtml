@@ -1,0 +1,112 @@
+﻿
+<head>
+    <script>
+        (function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-MZM6DB3');
+    </script>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+    <meta name="description" content="WorkSafe is New Zealand’s primary workplace health and safety regulator." />
+    <meta name="author" content="WorkSafe New Zealand" />
+    <link rel="stylesheet" type="text/css" href="https://cloud.typography.com/7083976/7810172/css/fonts.css" />
+    <link rel="stylesheet" type="text/css" href="~/css/style.css" />
+    <link rel="stylesheet" type="text/css" href="~/css/style-f962a90.css" media="screen" />
+</head>
+
+<h4>Search Notice</h4>
+<hr />
+
+
+<body itemscope itemtype="http://schema.org/WebPage" class="preload home">
+    <form asp-controller="WSNotices"  asp-action="ShowSearchResults" class="row row-cols-lg-auto g-3 align-items-center">
+        <div asp-validation-summary="ModelOnly" class="col-12"></div>
+        <div class="col-12" id="AutoComplete">
+            <label for="SearchBusiness" class="control-label"></label>
+            <input name="SearchKeyWord" class="form-control" id="myInput" type="text" placeholder="Search by keyword, company, hazard, notice no.">
+
+        </div>
+
+        <div class="col-12" id="DropdownLocation" style="display: inline">
+            <label for="Chooselocation" class="control-label"></label>
+            <select name="Location" class="form-control" id="Location">
+                <option value="" selected="selected">
+                    All Locations
+                </option>
+
+                <option value="Auckland">
+                    Auckland
+                </option>
+
+                <option value="Wellington">
+                    Wellington
+                </option>
+
+                <option value="Christchurch">
+                    Christchurch
+                </option>
+
+                <option value="Hamilton">
+                    Hamilton
+                </option>
+
+                <option value="Tauranga">
+                    Tauranga
+                </option>
+            </select>
+        </div>
+        <!--Remove Search Btn
+        <div class="col-12" id="GoButton">
+            <button type="submit" name="action_results" value="Go" class="action search-form__submit" id="header-search-form_action_results">
+                <svg class="search-form__submit-icon" viewBox="0 0 30 30" xmlns="http://www.w3.org/2000/svg">
+                    <g stroke="currentColor" stroke-width="2.158" fill="none" fill-rule="evenodd"><path d="M13.6 21a8 8 0 1 0 0-16 8 8 0 0 0 0 16z"></path><path d="M19.6 19l5 5" stroke-linecap="round"></path></g>
+                </svg><span class="visuallyhidden">Submit Search</span>
+            </button>
+        </div>
+        -->
+        
+        <div class="form-group">
+            <input type="submit" value="Search" class="btn btn-primary" />
+        </div>
+      
+    </form>  
+
+    <div>
+        <p></p>
+    </div>
+
+    <div>
+        <div id="myBtnContainer">
+            <button class="btn active" onclick="filterSelection('all')"> Show all</button>
+            <button class="btn" onclick="filterSelection('Topic')"> Topic</button>
+            <button class="btn" onclick="filterSelection('Industry')"> Industry</button>
+        </div>
+
+        <div class="TopicandIndustryContainer">
+            <div class="filterDiv Topic">Air quality</div>
+            <div class="filterDiv Topic">Building restraint</div>
+            <div class="filterDiv Topic">Amusement devices</div>
+            <div class="filterDiv Topic">Asbestos</div>
+            <div class="filterDiv Topic">Biological</div>
+            <div class="filterDiv Topic">Boilers</div>
+            <div class="filterDiv Topic">Bullying</div>
+            <div class="filterDiv Industry">Administration and support services</div>
+            <div class="filterDiv Industry">Agriculture</div>
+            <div class="filterDiv Industry">Arts and recreation</div>
+            <div class="filterDiv Industry">Consumer</div>
+            <div class="filterDiv Industry">Education and training</div>
+            <div class="filterDiv Industry">Energy</div>
+        </div>
+
+        <a asp-action="Index">Back to List</a>
+    </div>
+</body>
+
+
