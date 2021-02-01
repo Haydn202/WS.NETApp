@@ -1,4 +1,7 @@
 ﻿
+.btn-primary{
+    margin-top: 20px;
+}
 
 .filterDiv {
     float: left;
@@ -47,7 +50,6 @@
     .container {
         margin-top: 20px;
         overflow: hidden;
-
     }
 
 thead,
@@ -69,9 +71,6 @@ table {
     border-collapse: collapse;
     border: 2px solid rgb(200, 200, 200);
     letter-spacing: 1px;
-    
-
-
     font-size: .8rem;
 }
 
@@ -84,4 +83,3 @@ table {
     td {
         text-align: center;
     }
-

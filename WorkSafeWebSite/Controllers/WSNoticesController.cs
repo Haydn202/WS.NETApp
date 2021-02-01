@@ -33,15 +33,14 @@ namespace WorkSafeWebSite.Controllers
         // Shows search results on index page
         public async Task<IActionResult> ShowSearchResults(string Search_Phrase, string Search_Location)
         {
-            if (Search_Location != null)
-            {
-                return View("Index", await _context.PCBU.Where(n => n.business_Name.Contains(Search_Phrase) & n.location.Contains(Search_Location)).ToListAsync());
-            }
-            else
+            if (Search_Location.Equals("All"))
             {
                 return View("Index", await _context.PCBU.Where(n => n.business_Name.Contains(Search_Phrase)).ToListAsync());
             }
-            
+            else
+            {
+                return View("Index", await _context.PCBU.Where(n => n.business_Name.Contains(Search_Phrase) & n.location.Contains(Search_Location)).ToListAsync());
+            }
         }
 
         public async Task<IActionResult> ViewCompanyNotices(int? id)
