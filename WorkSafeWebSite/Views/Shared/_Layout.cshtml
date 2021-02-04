@@ -14,7 +14,7 @@
 <body>
     <header>
         <!--Test Mode Button--->
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+        @*<nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
             <div class="container">
                 <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">CoreWebApp_Test2</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
@@ -36,7 +36,7 @@
                     </ul>
                 </div>
             </div>
-        </nav>
+        </nav>*@
 
         <!---header from WS-->
         <!--
@@ -78,9 +78,8 @@
                                         <path d="M19.6 19l5 5" stroke-linecap="round" />
                                     </g>
                                 </svg>
-                                <span class="menu-button__text" asp-area="" asp-controller="Home" asp-action="Search">Search</span>
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Search">Search</a>
                             </button>
-
                         </div>
                     </div>
                     <div class="site-header__section site-header__section--center" id="head-logo">
