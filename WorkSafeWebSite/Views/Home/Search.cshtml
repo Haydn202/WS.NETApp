@@ -1,4 +1,7 @@
-﻿
+﻿@{
+    Layout = "_Layout";
+}
+
 <head>
     <script>
         (function (w, d, s, l, i) {
@@ -17,9 +20,9 @@
     <meta name="description" content="WorkSafe is New Zealand’s primary workplace health and safety regulator." />
     <meta name="author" content="WorkSafe New Zealand" />
     <link rel="stylesheet" type="text/css" href="https://cloud.typography.com/7083976/7810172/css/fonts.css" />
-    <link rel="stylesheet" type="text/css" href="~/css/style.css" />
+    <link rel="stylesheet" type="text/css" href="~/css/site.css" />
     <link rel="stylesheet" type="text/css" href="~/css/style-f962a90.css" media="screen" />
-  
+
 
 </head>
 
@@ -28,7 +31,7 @@
 
 
 <body itemscope itemtype="http://schema.org/WebPage" class="preload home">
-    <form asp-controller="WSNotices"  asp-action="ShowSearchResults" class="row row-cols-lg-auto g-3 align-items-center">
+    <form asp-controller="WSNotices" asp-action="ShowSearchResults" class="row row-cols-lg-auto g-3 align-items-center">
         <div asp-validation-summary="ModelOnly" class="col-6"></div>
         <div class="col-6" id="AutoComplete">
             <label for="SearchBusiness" class="control-label"></label>
@@ -73,23 +76,59 @@
             </button>
         </div>
         -->
-        
-        <div class="form-group">
+        <div class="col-2" id="GoBtn" style="display: inline">
+
+            <button type="submit" name="action_results" value="Search" class="action search-form__submit" id="search-page-form_action_results">
+                <svg class="menu-button__icon" viewBox="0 0 30 30" xmlns="http://www.w3.org/2000/svg">
+                    <g stroke="#1A1919" stroke-width="2.158" fill="none" fill-rule="evenodd">
+                        <path d="M13.6 21a8 8 0 1 0 0-16 8 8 0 0 0 0 16z"></path>
+                        <path d="M19.6 19l5 5" stroke-linecap="round"></path>
+                    </g>
+                </svg>
+            </button>
+
             <input type="submit" value="Search" class="btn btn-primary" />
-            <svg class="menu-button__icon" viewBox="0 0 30 30" xmlns="http://www.w3.org/2000/svg">
-                <g stroke="#1A1919" stroke-width="2.158" fill="none" fill-rule="evenodd">
-                    <path d="M13.6 21a8 8 0 1 0 0-16 8 8 0 0 0 0 16z"></path>
-                    <path d="M19.6 19l5 5" stroke-linecap="round"></path>
-                </g>
-            </svg>
         </div>
-      
-    </form>  
+
+    </form>
+    <div><br /></div>
 
     <div>
-        <p></p>
+        <div class="row" id="InstructionGrid">
+            <div class="col-sm-4">Practical advice and case studies for meeting Worksafe guidelines </div>
+            <div class="col-sm-4">What this register is used for? WHo does it benefit firsthand?</div>
+            <div class="col-sm-4">.col-sm-4</div>
+        </div>
     </div>
 
+    <div><br /></div>
+    <div>
+        <h2>Find topic by industry</h2>
+        <div class="row" id="FindTopicGrid">
+            <div class="col-sm-4">Adventure activities</div>
+            <div class="col-sm-4">Agriculture</div>
+            <div class="col-sm-4">Building and Construction</div>
+            <div class="col-sm-4">.col-sm-4</div>
+            <div class="col-sm-4">.col-sm-4</div>
+            <div class="col-sm-4">.col-sm-4</div>
+            <div class="col-sm-4">.col-sm-4</div>
+            <div class="col-sm-4">.col-sm-4</div>
+            <div class="col-sm-4">.col-sm-4</div>
+        </div>
+    </div>
+
+    <div><br /></div>
+    <div>
+        <h2>Recent News</h2>
+        <div class="row" id="NewsGrid">
+            <div class="col-sm-4">Picture1 </div>
+            <div class="col-sm-4">Picture1</div>
+            <div class="col-sm-4">Picture1</div>
+        </div>
+    </div>
+
+
+    <!---Remove moving box
     <div>
         <div id="myBtnContainer">
             <button class="btn active" onclick="filterSelection('all')"> Show all</button>
@@ -115,6 +154,7 @@
 
         <a asp-action="Index">Back to List</a>
     </div>
+    --->
 </body>
 
 

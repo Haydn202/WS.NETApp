@@ -5,18 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - WorkSafeWebSite</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/css/style.css" />
-    
-    
-    <!--Test
     <link rel="stylesheet" href="~/css/site.css" />
-    <link rel="stylesheet" href="~/css/style-f962a90.css" />
-    -->
+    
+   
 </head>
 
 
 <body>
     <header>
+        <!--Test Mode Button--->
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
             <div class="container">
                 <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">CoreWebApp_Test2</a>
@@ -43,8 +40,8 @@
 
         <!---header from WS-->
         <!--
-            <header id="page-head" class="old">
-        -->
+        <header id="page-head" class="old">
+    -->
 
         <section id="accessibility-links" class="visuallyhidden">
             <div id="skip-links-label">Skip Links</div>
@@ -81,7 +78,7 @@
                                         <path d="M19.6 19l5 5" stroke-linecap="round" />
                                     </g>
                                 </svg>
-                                <span class="menu-button__text">Search</span>
+                                <span class="menu-button__text" asp-area="" asp-controller="Home" asp-action="Search">Search</span>
                             </button>
 
                         </div>
@@ -115,7 +112,11 @@
                                         <path d="M19.6 19l5 5" stroke-linecap="round" />
                                     </g>
                                 </svg>
-                                <span class="menu-button__text">Search</span>
+
+                                <span class="menu-button__text">
+                                    <span class="menu-button__text">Search</span>
+                                </span>
+
                             </button>
 
                         </div>
@@ -2171,8 +2172,6 @@
 
             </div>
         </nav>
-
-
 
 
         <!--End of header from WS-->
