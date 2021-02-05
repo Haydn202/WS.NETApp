@@ -3,6 +3,19 @@
 
 // Write your JavaScript code.
 
+/* select topic under industry on page1 */
+
+function selectTopic(e) {
+    document.getElementById("myInput").value = e.target.value
+    document.getElementById("notice_Picker").value = true;
+}
+
+
+
+
+
+
+
 /* Show Industry and Topic on search page*/
 filterSelection("all")
 
@@ -149,7 +162,9 @@ function autocomplete(inp, arr) {
 }
 /*An array containing all the company names in the NZBN:*/
 var countries = ["2degrees", "AFFCO Holdings", "AHI Roofing", "Air New Zealand Ltd", "Airwork", "Alliance Group", "Auckland Airport Ltd", "Aurora Energy", "Baby on the Move", "Bank of New Zealand", "Barfoot & Thompson", "Black + White Mobile", "Blis Technologies Ltd", "Bridget Williams Books", "Cavalier Corporation", "Cloudy Bay Vineyards", "Contact Energy Ltd", "Datacom Group", "Daltons Ltd", "Designline", "Eurekster", "Fisher & Paykel Appliances Holdings", "Fisher & Paykel Healthcare", "Fletcher Building Ltd", "Fletcher Challenge", "Fonterra Co-operative Group Ltd", "Foodstuffs (NZ) Ltd",];
-
+/* List for Topics and Industries */
+var Topics = ["Air quality", "Building restraint", "Amusement devices", "Amusement devices", "Asbestos", "Bullying",];
+var Industies = ["Adventure activities",];
 /*initiate the autocomplete function on the "myInput" element, and pass along the countries array as possible autocomplete values:*/
 autocomplete(document.getElementById("myInput"), countries);
 

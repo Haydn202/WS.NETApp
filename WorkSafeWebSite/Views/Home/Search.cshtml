@@ -1,6 +1,4 @@
-﻿@{
-    Layout = "_Layout";
-}
+﻿
 
 <head>
     <script>
@@ -95,9 +93,9 @@
 
     <div>
         <div class="row" id="InstructionGrid">
-            <div class="col-sm-4">Practical advice and case studies for meeting Worksafe guidelines </div>
-            <div class="col-sm-4">What this register is used for? WHo does it benefit firsthand?</div>
-            <div class="col-sm-4">.col-sm-4</div>
+            <div class="col-sm-4" id="circleBase1">Practical advice and case studies for meeting Worksafe guidelines </div>
+            <div class="col-sm-4" id="circleBase2">What this register is used for? WHo does it benefit firsthand?</div>
+            <div class="col-sm-4" id="circleBase3">.col-sm-4</div>
         </div>
     </div>
 
@@ -105,7 +103,25 @@
     <div>
         <h2>Find topic by industry</h2>
         <div class="row" id="FindTopicGrid">
-            <div class="col-sm-4">Adventure activities</div>
+            <div class="col-sm-4">
+                <select class="topic-under-industry" onchange="selectTopic(event)">
+                    <option value="All" selected="selected">
+                        Adventure activities
+                    </option>
+                    <option value="Air quality">
+                        Air quality
+                    </option>
+                    <option value="Amusement devices">
+                        Amusement devices
+                    </option>
+                    <option value="Asbestos">
+                        Asbestos
+                    </option>
+                    <option value="Bullying">
+                        Bullying
+                    </option>
+                </select>
+            </div>
             <div class="col-sm-4">Agriculture</div>
             <div class="col-sm-4">Building and Construction</div>
             <div class="col-sm-4">.col-sm-4</div>
