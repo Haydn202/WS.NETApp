@@ -1,10 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using System;
 using System.Linq;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
-using Microsoft.EntityFrameworkCore;
 using WorkSafeWebSite.Data;
 using WorkSafeWebSite.Models;
 
@@ -73,7 +71,7 @@ namespace WorkSafeWebSite.Controllers
                 {
                     return View("Index", await _context.PCBU.Where(n => n.business_Name.Contains(Search_Phrase) & n.location.Contains(Search_Location) & n.industry.Contains(Search_Industry)).ToListAsync());
                 }
-            }    
+            }
         }
 
         public async Task<IActionResult> ViewCompanyNotices(int? id)
