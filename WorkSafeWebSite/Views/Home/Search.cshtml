@@ -1,7 +1,5 @@
 ﻿
 
-
-
 <head>
     <script>
         (function (w, d, s, l, i) {
@@ -24,20 +22,21 @@
     <link rel="stylesheet" type="text/css" href="~/css/style-f962a90.css" media="screen" />
 
 </head>
-
-<h4>Search Notice</h4>
 <hr />
 
+
 <body itemscope itemtype="http://schema.org/WebPage" class="preload home">
+
+
     <form asp-controller="WSNotices" asp-action="ShowSearchResults" class="row row-cols-lg-auto g-3 align-items-center">
         <div asp-validation-summary="ModelOnly" class="col-6"></div>
-        <div class="col-6" id="AutoComplete">
+
+        <div class="col-4" id="AutoComplete">
             <label for="SearchBusiness" class="control-label"></label>
             <input name="Search_Phrase" class="form-control" id="myInput" type="text" placeholder="Search by keyword, company, hazard, notice no." required>
-
         </div>
 
-        <div class="col-4" id="DropdownLocation" style="display: inline">
+        <div class="col-2" id="DropdownLocation" style="display: inline">
             <label for="Chooselocation" class="control-label"></label>
             <select name="Search_Location" class="form-control" id="Location">
                 <option value="All" selected="selected">
@@ -66,16 +65,7 @@
             </select>
         </div>
 
-        <div class="switch block" style="display: inline">
-            <label class="switch">
-                Search Buisness
-                <input type="checkbox" name="notice_Picker" id="notice_Picker" value="true">
-                <span class="slider round"></span>
-                Search Notice
-            </label>
-        </div>
-
-        <div class="col-4" id="DropdownLocation" style="display: inline">
+        <div class="col-2" id="DropdownIndustry" style="display: inline">
             <label for="Search_Industry" class="control-label"></label>
             <select name="Search_Industry" class="form-control" id="Industry">
                 <option value="Any" selected="selected">
@@ -116,18 +106,29 @@
             </select>
         </div>
 
+        <div class="col-2" id="switch block">
+            <label class="switch" stype="display: inline">
+                Search Buisness
+                <input type="checkbox" name="notice_Picker" id="notice_Picker" value="true">
+                <span class="slider round"></span>
+                Search Notice
+            </label>
+        </div>
         <!--Remove Search Btn
-    <div class="col-12" id="GoButton">
-        <button type="submit" name="action_results" value="Go" class="action search-form__submit" id="header-search-form_action_results">
-            <svg class="search-form__submit-icon" viewBox="0 0 30 30" xmlns="http://www.w3.org/2000/svg">
-                <g stroke="currentColor" stroke-width="2.158" fill="none" fill-rule="evenodd"><path d="M13.6 21a8 8 0 1 0 0-16 8 8 0 0 0 0 16z"></path><path d="M19.6 19l5 5" stroke-linecap="round"></path></g>
-            </svg><span class="visuallyhidden">Submit Search</span>
-        </button>
-    </div>-->
+        <div class="col-12" id="GoButton">
+            <button type="submit" name="action_results" value="Go" class="action search-form__submit" id="header-search-form_action_results">
+                <svg class="search-form__submit-icon" viewBox="0 0 30 30" xmlns="http://www.w3.org/2000/svg">
+                    <g stroke="currentColor" stroke-width="2.158" fill="none" fill-rule="evenodd"><path d="M13.6 21a8 8 0 1 0 0-16 8 8 0 0 0 0 16z"></path><path d="M19.6 19l5 5" stroke-linecap="round"></path></g>
+                </svg><span class="visuallyhidden">Submit Search</span>
+            </button>
+        </div>-->
 
-        <div class="col-2" id="GoBtn" style="display: inline">
-
+        <div class="col-1" id="GoBtn" style="display: inline">
+            <!--ASP stype button
+            <input type="submit" value="Search" class="btn btn-primary" />
             <button type="submit" name="action_results" value="Search" class="action search-form__submit" id="search-page-form_action_results">
+                -->
+            <button type="submit" class="action search-form__submit">
                 <svg class="menu-button__icon" viewBox="0 0 30 30" xmlns="http://www.w3.org/2000/svg">
                     <g stroke="#1A1919" stroke-width="2.158" fill="none" fill-rule="evenodd">
                         <path d="M13.6 21a8 8 0 1 0 0-16 8 8 0 0 0 0 16z"></path>
@@ -136,51 +137,50 @@
                 </svg>
             </button>
 
-            <input type="submit" value="Search" class="btn btn-primary" />
         </div>
 
     </form>
+
+    <div><br /></div>
     <div><br /></div>
 
     <div>
-        <div class="row" id="InstructionGrid">
-            <div class="col-sm-4" id="circleBase1">Practical advice and case studies for meeting Worksafe guidelines </div>
-            <div class="col-sm-4" id="circleBase2">What this register is used for? WHo does it benefit firsthand?</div>
-            <div class="col-sm-4" id="circleBase3">.col-sm-4</div>
+        <div class="row" id="IntroGrid">           
+            <div class="col-sm-3" id="circleBase1" >
+                <div class="IntroNr" style="display: inline">1</div>
+                <div class="IntroContent">Practical advice and case studies for meeting Worksafe guidelines</div>
+            </div>
+            <div class="col-1"></div>
+            <div class="col-sm-3" id="circleBase2">
+                <div class="IntroNr" style="display: inline">2</div>
+                <div class="IntroContent">
+                    What this register is used for? WHo does it benefit firsthand?
+                </div>
+            </div>
+            <div class="col-1" ></div>
+            <div class="col-sm-3" id="circleBase3">
+                <div class="IntroNr" style="display: inline">3</div>
+                <div class="IntroContent">
+                    Community
+                </div>
+            </div>
         </div>
     </div>
-
     <div><br /></div>
+    <div><br /></div>
+
     <div>
         <h2>Find topic by industry</h2>
         <div class="row" id="FindTopicGrid">
-            <div class="col-sm-4">
-                <select class="topic-under-industry" onchange="selectTopic(event)">
-                    <option value="All" selected="selected">
-                        Adventure activities
-                    </option>
-                    <option value="Air quality">
-                        Air quality
-                    </option>
-                    <option value="Amusement devices">
-                        Amusement devices
-                    </option>
-                    <option value="Asbestos">
-                        Asbestos
-                    </option>
-                    <option value="Bullying">
-                        Bullying
-                    </option>
-                </select>
-            </div>
-            <div class="col-sm-4">Agriculture</div>
-            <div class="col-sm-4">Building and Construction</div>
-            <div class="col-sm-4">.col-sm-4</div>
-            <div class="col-sm-4">.col-sm-4</div>
-            <div class="col-sm-4">.col-sm-4</div>
-            <div class="col-sm-4">.col-sm-4</div>
-            <div class="col-sm-4">.col-sm-4</div>
-            <div class="col-sm-4">.col-sm-4</div>
+            <div class="col-sm-4"><div class="classWithPad">Agriculture</div></div>
+            <div class="col-sm-4"><div class="classWithPad">Building and Construction</div></div>
+            <div class="col-sm-4"><div class="classWithPad">Consumer</div></div>
+            <div class="col-sm-4"><div class="classWithPad">Adventure activities</div></div>
+            <div class="col-sm-4"><div class="classWithPad">Education and training</div></div>
+            <div class="col-sm-4"><div class="classWithPad">Fishing, hunting and trapping</div></div>
+            <div class="col-sm-4"><div class="classWithPad">Administration and support services</div></div>
+            <div class="col-sm-4"><div class="classWithPad">Energy</div></div>
+            <div class="col-sm-4"><div class="classWithPad">Health care and social assistance</div></div>
         </div>
     </div>
 

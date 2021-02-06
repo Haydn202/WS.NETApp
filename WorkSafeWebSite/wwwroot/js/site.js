@@ -2,18 +2,28 @@
 // for details on configuring this project to bundle and minify static web assets.
 
 // Write your JavaScript code.
+/*try new search bar*/
+$(document).ready(function () {
+    $(".default_option").click(function () {
+        $(".dropdown ul").addClass("active");
+    });
+
+    $(".dropdown ul li").click(function () {
+        var text = $(this).text();
+        $(".default_option").text(text);
+        $(".dropdown ul").removeClass("active");
+    });
+});
+
+
 
 /* select topic under industry on page1 */
 
 function selectTopic(e) {
     document.getElementById("myInput").value = e.target.value
     document.getElementById("notice_Picker").value = true;
+   
 }
-
-
-
-
-
 
 
 /* Show Industry and Topic on search page*/
