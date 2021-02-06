@@ -3,6 +3,11 @@
     margin-top: 20px;
 }
 
+div.a {
+    text-align: right;
+}
+
+
 .filterDiv {
     float: left;
     background-color: #f7f9e3;

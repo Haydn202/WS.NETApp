@@ -21,7 +21,9 @@ namespace WorkSafeWebSite.Data.Migrations
                     issued_To = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     notice_Type = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     topic = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    pdf_URL = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                    pdf_URL = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    resolved_date = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    resolved_pdf_URL = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
                 constraints: table =>
                 {
