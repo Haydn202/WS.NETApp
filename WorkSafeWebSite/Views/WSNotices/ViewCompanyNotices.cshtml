@@ -26,8 +26,8 @@
     <link rel="stylesheet" type="text/css" href="~/css/style-f962a90.css" media="screen" />
 </head>
 
-<h1>Notices</h1>
 
+<h1>Notices</h1>
 <p>
     <a asp-action="Create">Create New</a>
 </p>
@@ -69,7 +69,8 @@
         {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.business_Name)
+                <a class="nav-link text-dark" asp-action="NavigateToNoticeDtails" asp-route-id="@item.Id">
+                @Html.DisplayFor(modelItem => item.business_Name)</a>
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.business_Number)

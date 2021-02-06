@@ -303,6 +303,12 @@ namespace WorkSafeWebSite.Data.Migrations
                     b.Property<string>("topic")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<DateTime>("resolved_date")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("resolved_pdf_URL")
+                       .HasColumnType("nvarchar(max)");
+
                     b.HasKey("Id");
 
                     b.ToTable("WSNotice");
