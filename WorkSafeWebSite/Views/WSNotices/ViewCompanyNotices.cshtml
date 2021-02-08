@@ -28,84 +28,41 @@
 
 
 <h1>Notices</h1>
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
+
 <table>
     <thead>
         <tr>
-            <th>
-                Business Name
-            </th>
-            <th>
-                Business Number
-            </th>
-            <th>
-               Location
-            </th>
-            @*<th>
-            @Html.DisplayNameFor(model => model.industry)
-        </th>*@
-            <th>
-                Date Issued
-            </th>
-            @*<th>
-            @Html.DisplayNameFor(model => model.issued_To)
-        </th>*@
-            <th>
-                Notice Type
-            </th>
-            <th>
-                Topic
-            </th>
-            <th>
-                DownLoad
-            </th>
-            <th></th>
+            
         </tr>
     </thead>
     <tbody>
         @foreach (var item in Model)
         {
-        <tr>
-            <td>
-                <a class="nav-link text-dark" asp-action="NavigateToNoticeDtails" asp-route-id="@item.Id">
-                @Html.DisplayFor(modelItem => item.business_Name)</a>
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.business_Number)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.location)
-            </td>
-            @*<td>
-            @Html.DisplayFor(modelItem => item.industry)
-        </td>*@
-            <td>
-                @Html.DisplayFor(modelItem => item.date_Issued)
-            </td>
-            @*<td>
-            @Html.DisplayFor(modelItem => item.issued_To)
-        </td>*@
-            <td>
-                @Html.DisplayFor(modelItem => item.notice_Type)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.topic)
-            </td>
-            <td>
-                @*@Html.DisplayFor(modelItem => item.pdf_URL)*@
-                @* Load pdf_URL from database and put into Model. Test if this link is working or not *@
-                <a href='@Url.Content("~/PDF_Folder/"+ item.pdf_URL)' target="_blank">
+        <tr>           
+            <div class="rowBusinessCards">
+                <div class="card">
+                    <div class="row">
+                        <div class="col-10"><a href="#">@Html.DisplayFor(modelItem => item.business_Name)</a></div>
+                        <div class="col-2">Date: @Html.DisplayFor(modelItem => item.date_Issued)</div>
+
+                        <div class="col-6">Topic: @Html.DisplayFor(modelItem => item.topic)</div>
+                        <div class="col-3">Region: @Html.DisplayFor(modelItem => item.location)</div>
+                        <div class="col-2">Status: @Html.DisplayFor(modelItem => item.current_notice_status)</div>
+                        <div class="col-1">TraficLight</div>
+
+                        <div class="col-4">Prohibtion Notice # xxxxxx: </div>
+                        <a asp-action="Details" asp-route-id="@item.Id">Details</a>
+                        <a href='@Url.Content("~/PDF_Folder/"+ item.pdf_URL)' target="_blank">
                     Download
                 </a>
+                        <div class="col-8"></div>
 
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-            </td>
+                        <div class="col-12">Summery: Unsafe Asbestos removal carried out by unqualified asbestos removalist</div>
+                    </div>
+                </div>
+            </div>
+            <div><br /></div>
+
         </tr>
         }
     </tbody>

@@ -580,69 +580,33 @@
         <a asp-action="Create">Create New</a>
     </p>
     -->
-    <div><br /></div>
-
-    <div class="rowBusinessCards">
-        <div class="card">
-            <div class="row">
-                <div class="col-10"><a href="#">CompanyName1</a></div>
-                <div class="col-2">Issue Date:</div>
-
-                <div class="col-6">Topic: </div>
-                <div class="col-3">Region: </div>
-                <div class="col-2">Status: (issued/expired)</div>
-                <div class="col-1">TraficLight</div>
-
-                <div class="col-4">Prohibtion Notice # xxxxxx: </div>
-                <div class="col-8"></div>
-
-                <div class="col-12">Summery: Unsafe Asbestos removal carried out by unqualified asbestos removalist</div>
-            </div>
-        </div>
-    </div>
-    <div><br /></div>
+ 
 
     <!--flowing are old search result table to be changed with business cards-->
     <table>
         <thead>
             <tr>
-                <th>
-                    Business Name
-                </th>
-                <th>
-                    Business Number
-                </th>
-                <th>
-                    Location
-                </th>
-                <th>
-                    Industry
-                </th>
-                <th></th>
+               
             </tr>
         </thead>
         <tbody>
             @foreach (var item in Model)
             {
-                <tr>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.business_Name)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.business_Number)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.location)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.industry)
-                    </td>
-                    <td>
-                        <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                        <a asp-action="ViewCompanyNotices" asp-route-id="@item.Id">View Company Notices</a> |
-                        <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-                    </td>
-                </tr>
+            <tr>
+                <div class="rowBusinessCards">
+                    <div class="card">
+                        <div class="row">
+                            <div class="col-10"><a asp-action="ViewCompanyNotices" asp-route-id="@item.Id">@Html.DisplayFor(modelItem => item.business_Name)</a></div>
+                            <div class="col-2">Buisness Number: @Html.DisplayFor(modelItem => item.business_Number)</div>
+
+                            <div class="col-6">Industry: @Html.DisplayFor(modelItem => item.industry)</div>
+                            <div class="col-3">Region: @Html.DisplayFor(modelItem => item.location)</div>
+
+                        </div>
+                    </div>
+                </div>
+                <div><br /></div>
+            </tr>
             }
         </tbody>
     </table>

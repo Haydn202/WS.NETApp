@@ -27,12 +27,6 @@ namespace WorkSafeWebSite.Models
         public string current_notice_status { get; set; }
         public string current_resolve_status { get; set; }
         public string improvement_notice { get; set; }
-
-
-
-
-
-
         public WSNotice()
         {
                
