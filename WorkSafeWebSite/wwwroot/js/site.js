@@ -2,6 +2,25 @@
 // for details on configuring this project to bundle and minify static web assets.
 
 // Write your JavaScript code.
+/* click and hide Topic*/
+
+function toggle_topic_visibility(id) {
+    var industry = document.getElementById('FindTopicGrid');
+    var showTopic = document.getElementById(id);
+    if (showTopic.style.display == 'none') {
+        console.log("Topic hidden => show");
+        showTopic.style.display = 'block';
+        industry.style.display = 'none';
+        document.getElementById('IndustryAndTopicTitle').innerHTML = "Topics";
+    }
+    else {
+        showTopic.style.display = 'none';
+        console.log("show => hidden");
+        industry.style.display = '';
+        document.getElementById('IndustryAndTopicTitle').innerHTML = "Find topic by industry";
+    }
+}
+
 /*try new search bar*/
 $(document).ready(function () {
     $(".default_option").click(function () {

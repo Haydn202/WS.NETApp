@@ -3,9 +3,64 @@ for details on configuring this project to bundle and minify static web assets. 
 
 
 /* css added VUW*/
+/*-------page2----------*/
+#rowBusinessCards {
+    background-color: #F8FAFA;
+}
+#rowBusinessCards {
+    background-color: #F8FAFA;
+}
+
+
+#filterIndustry, #filterNoticeType, #filterTopics {
+    background-color: #E4ECFF;
+}
+
+#FilterOptions {   
+    width: 100%;
+}
+    #FilterOptions select {
+        height: calc(1.5em + .75rem + 2px);
+        border: 1px solid #ced4da;
+        padding: .375rem .75rem;
+        width: 100%;
+        font-size:1rem;
+        font-weight:400;
+        line-height:1.5;
+        text-align: center;
+        border-radius: .25rem;
+        transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out
+    }
+
+        #FilterOptions select:hover {
+            background-color: #f8f9fa
+        }
+
+#SortingOptions {
+    height: calc(1.5em + .75rem + 2px);
+    width: 100%;
+    font-size: 1rem;
+    font-weight: 400;    
+    text-align: center;
+    
+}
+    #SortingOptions select {
+        border: 1px solid #ced4da;
+        padding: .375rem .75rem;
+        line-height: 1.5;
+        border-radius: .25rem;
+    }
+    #SortingOptions label {
+        font-weight: bold;
+    }
+
+/*------page1----------*/
+/* hidden topics under industries*/
+.topics {
+    background-color: #ED7F19;
+}
 
 /*header background color*/
-
 header {
     background: #D6E36F;
 }
@@ -19,14 +74,12 @@ header {
     height:50px;  
     color: white;
     font-size: 17px;
-    border: 1px solid grey;
     border: none; /* Prevent double borders */
     cursor: pointer;
 }
     #GoBtn:hover {
-        background: #F2FEA0;
+        background: #d9e07c;
     }
-
 
 ​​​​​​​
 /*design elements on 1st page*/
@@ -35,27 +88,16 @@ header {
     width: 240px;
     height: 250px;
     background-color: #C4C4C4;
+    text-align: center;
+    position: relative
 }
-#circleBase1 {
+#circleBase1, #circleBase2, #circleBase3 {
     border-radius: 50%;
     width: 240px;
     height: 250px;
     background-color: #C4C4C4;
-    text-align: center
-}
-#circleBase2 {
-    border-radius: 50%;
-    width: 240px;
-    height: 250px;
-    background-color: #C4C4C4;
-    text-align: center
-}
-#circleBase3 {
-    border-radius: 50%;
-    width: 250px;
-    height: 250px;
-    background-color: #C4C4C4;
-    text-align: center
+    text-align: center;
+    position: relative
 }
 
 .IntroNr {
@@ -79,7 +121,69 @@ header {
     background-color: #ED7F19;
 }
 
-/*moving container */
+/*Switch btn*/
+.switch {
+    position: relative;
+    
+    width: 40px;
+    height: 20px;
+}
+
+    .switch input {
+        opacity:0;
+        width: 0;
+        height: 0;
+    }
+
+.slider {
+    position:absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ffbf00;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+    .slider:before {
+        position: absolute;
+        content: "";
+        height: 26px;
+        width: 26px;
+        left: 4px;
+        bottom: 4px;
+        background-color: white;
+        -webkit-transition: .4s;
+        transition: .4s;
+    }
+
+input:checked + .slider {
+    background-color: #2196F3;
+}
+
+input:focus + .slider {
+    box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+    border-radius: 34px;
+}
+
+    .slider.round:before {
+        border-radius: 50%;
+    }
+
+
+/*moving container --not in use needs to be clear out*/
 .filterDiv {
     float: left;
     background-color: #f7f9e3;
@@ -161,11 +265,10 @@ td {
 }
 
 
+​​​​​​​
 
 
-
-
-
+​​​​​​​
 /* From WorkSafe CSS*/
 /****** FILE: vendor/silverware/calendar/client/dist/styles/bundle.css *****/
 .flatpickr-calendar {

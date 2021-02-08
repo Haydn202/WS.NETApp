@@ -22,6 +22,7 @@
     <link rel="stylesheet" type="text/css" href="~/css/style-f962a90.css" media="screen" />
 
 </head>
+
 <hr />
 
 
@@ -106,28 +107,20 @@
             </select>
         </div>
 
-        <div class="col-2" id="switch block">
-            <label class="switch" stype="display: inline">
-                Search Buisness
-                <input type="checkbox" name="notice_Picker" id="notice_Picker" value="true">
-                <span class="slider round"></span>
-                Search Notice
-            </label>
-        </div>
         <!--Remove Search Btn
-        <div class="col-12" id="GoButton">
-            <button type="submit" name="action_results" value="Go" class="action search-form__submit" id="header-search-form_action_results">
-                <svg class="search-form__submit-icon" viewBox="0 0 30 30" xmlns="http://www.w3.org/2000/svg">
-                    <g stroke="currentColor" stroke-width="2.158" fill="none" fill-rule="evenodd"><path d="M13.6 21a8 8 0 1 0 0-16 8 8 0 0 0 0 16z"></path><path d="M19.6 19l5 5" stroke-linecap="round"></path></g>
-                </svg><span class="visuallyhidden">Submit Search</span>
-            </button>
-        </div>-->
+    <div class="col-12" id="GoButton">
+        <button type="submit" name="action_results" value="Go" class="action search-form__submit" id="header-search-form_action_results">
+            <svg class="search-form__submit-icon" viewBox="0 0 30 30" xmlns="http://www.w3.org/2000/svg">
+                <g stroke="currentColor" stroke-width="2.158" fill="none" fill-rule="evenodd"><path d="M13.6 21a8 8 0 1 0 0-16 8 8 0 0 0 0 16z"></path><path d="M19.6 19l5 5" stroke-linecap="round"></path></g>
+            </svg><span class="visuallyhidden">Submit Search</span>
+        </button>
+    </div>-->
 
         <div class="col-1" id="GoBtn" style="display: inline">
             <!--ASP stype button
-            <input type="submit" value="Search" class="btn btn-primary" />
-            <button type="submit" name="action_results" value="Search" class="action search-form__submit" id="search-page-form_action_results">
-                -->
+        <input type="submit" value="Search" class="btn btn-primary" />
+        <button type="submit" name="action_results" value="Search" class="action search-form__submit" id="search-page-form_action_results">
+            -->
             <button type="submit" class="action search-form__submit">
                 <svg class="menu-button__icon" viewBox="0 0 30 30" xmlns="http://www.w3.org/2000/svg">
                     <g stroke="#1A1919" stroke-width="2.158" fill="none" fill-rule="evenodd">
@@ -136,7 +129,15 @@
                     </g>
                 </svg>
             </button>
+        </div>
 
+        <div class="col-2" id="switch block" style="display: inline">
+            <label class="switch" style="display: inline">
+                Search Buisness
+                <input type="checkbox" name="notice_Picker" id="notice_Picker" value="true">
+                <span class="slider round"></span>
+                Search Notice
+            </label>
         </div>
 
     </form>
@@ -170,32 +171,74 @@
     <div><br /></div>
 
     <div>
-        <h2>Find topic by industry</h2>
-        <div class="row" id="FindTopicGrid">
-            <div class="col-sm-4"><div class="classWithPad">Agriculture</div></div>
-            <div class="col-sm-4"><div class="classWithPad">Building and Construction</div></div>
-            <div class="col-sm-4"><div class="classWithPad">Consumer</div></div>
-            <div class="col-sm-4"><div class="classWithPad">Adventure activities</div></div>
-            <div class="col-sm-4"><div class="classWithPad">Education and training</div></div>
-            <div class="col-sm-4"><div class="classWithPad">Fishing, hunting and trapping</div></div>
-            <div class="col-sm-4"><div class="classWithPad">Administration and support services</div></div>
-            <div class="col-sm-4"><div class="classWithPad">Energy</div></div>
-            <div class="col-sm-4"><div class="classWithPad">Health care and social assistance</div></div>
+        <div id="Industries">
+            <h2 id="IndustryAndTopicTitle">Find topic by industry</h2>
+            <div class="row" id="FindTopicGrid">
+                <div class="col-sm-4"><div class="classWithPad"><a href="#" onclick="toggle_topic_visibility('Agriculture');">Agriculture</a></div></div>
+                <div class="col-sm-4"><div class="classWithPad"><a href="#" onclick="toggle_topic_visibility('Building_Construction');">Building and Construction</a></div></div>
+                <div class="col-sm-4"><div class="classWithPad"><a href="#" onclick="toggle_topic_visibility('Consumer');">Consumer</a></div></div>
+                <div class="col-sm-4"><div class="classWithPad"><a href="#" onclick="toggle_topic_visibility('Adventure_activities');">Adventure activities</a></div></div>
+                <div class="col-sm-4"><div class="classWithPad"><a href="#" onclick="toggle_topic_visibility('Consumer');">Education and training</a></div></div>
+                <div class="col-sm-4"><div class="classWithPad"><a href="#" onclick="toggle_topic_visibility('Consumer');">Fishing, hunting and trapping</a></div></div>
+                <div class="col-sm-4"><div class="classWithPad"><a href="#" onclick="toggle_topic_visibility('Consumer');">Administration and support services</a></div></div>
+                <div class="col-sm-4"><div class="classWithPad"><a href="#" onclick="toggle_topic_visibility('Consumer');">Energy</a></div></div>
+                <div class="col-sm-4"><div class="classWithPad"><a href="#" onclick="toggle_topic_visibility('Consumer');">Health care and social assistance</a></div></div>
+            </div>
         </div>
+
+        <div class="Topics">
+            <div class="topics" id="Agriculture" style="display: none">
+
+                <div class="row">
+                    <div class="col-1"><div class="backToIndustry"><a href="#" onclick="toggle_topic_visibility('Agriculture');">back</a></div></div>
+                    <div class="row">
+                        <div class="col-9">Agriculture Topic 1</div>
+                        <div class="col-9">Agriculture Topic 2</div>
+                        <div class="col-9">Agriculture Topic 3</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="topics" id="Adventure_activities" style="display: none">
+                <div class="row">
+                    <div class="col-1"><div class="backToIndustry"><a href="#" onclick="toggle_topic_visibility('Adventure_activities');">back</a></div></div>
+                    <div class="row">
+                        <div class="col-9">Adventure activities Topic 1</div>
+                        <div class="col-9">Adventure activities Topic 2</div>
+                        <div class="col-9">Adventure activities Topic 3</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="topics" id="Building_Construction" style="display: none">
+                <div class="row">
+                    <div class="col-1"><div class="backToIndustry"><a href="#" onclick="toggle_topic_visibility('Adventure_activities');">back</a></div></div>
+                    <div class="row">
+                        <div class="col-9">Building and Construction Topic 1</div>
+                        <div class="col-9">Building and Construction Topic 2</div>
+                        <div class="col-9">Building and Construction Topic 3</div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+     </div>
+
+        <div><br /></div>
+        <div>
+            <h2>Recent News</h2>
+            <div class="row" id="NewsGrid">
+                <div class="col-sm-4"><img src="pic.02.jpg" class="img-rounded" alt="Cinque Terre" width="304" height="236">Picture1 </div>
+                <div class="col-sm-4">Picture1</div>
+                <div class="col-sm-4">Picture1</div>
+            </div>
+        </div>
+
     </div>
 
-    <div><br /></div>
+        <!---Remove moving box
     <div>
-        <h2>Recent News</h2>
-        <div class="row" id="NewsGrid">
-            <div class="col-sm-4">Picture1 </div>
-            <div class="col-sm-4">Picture1</div>
-            <div class="col-sm-4">Picture1</div>
-        </div>
-    </div>
-
-    <!---Remove moving box
-    <div>
+            
         <div id="myBtnContainer">
             <button class="btn active" onclick="filterSelection('all')"> Show all</button>
             <button class="btn" onclick="filterSelection('Topic')"> Topic</button>
