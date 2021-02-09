@@ -30,58 +30,59 @@
 
 
     <form asp-controller="WSNotices" asp-action="ShowSearchResults" class="row row-cols-lg-auto g-3 align-items-center">
+        <!--test
+    <div asp-validation-summary="ModelOnly" class="col-8"></div>
+    -->
+        <div class="row" id="SearchOptions">
+            <div class="col-md-7" id="AutoComplete">
+                <label for="SearchBusiness" class="control-label"></label>
+                <input name="Search_Phrase" class="form-control" id="myInput" type="text" placeholder="Search by keyword, company, hazard, notice no." required>
+            </div>
 
-        <div asp-validation-summary="ModelOnly" class="col-8"></div>
-        <div class="col-6" id="AutoComplete">
-            <label for="SearchBusiness" class="control-label"></label>
-            <input name="Search_Phrase" class="form-control" id="myInput" type="text" placeholder="Search by keyword, company, hazard, notice no." required>
-        </div>
+            <div class="col-md-3" id="DropdownLocation">
+                <label for="Chooselocation" class="control-label"></label>
+                <select name="Search_Location" class="form-control" id="Location">
+                    <option value="All" selected="selected">
+                        All Locations
+                    </option>
 
-        <div class="col-4" id="DropdownLocation" style="display: inline">
-            <label for="Chooselocation" class="control-label"></label>
-            <select name="Search_Location" class="form-control" id="Location">
-                <option value="All" selected="selected">
-                    All Locations
-                </option>
+                    <option value="Auckland">
+                        Auckland
+                    </option>
 
-                <option value="Auckland">
-                    Auckland
-                </option>
+                    <option value="Wellington">
+                        Wellington
+                    </option>
 
-                <option value="Wellington">
-                    Wellington
-                </option>
+                    <option value="Christchurch">
+                        Christchurch
+                    </option>
 
-                <option value="Christchurch">
-                    Christchurch
-                </option>
+                    <option value="Hamilton">
+                        Hamilton
+                    </option>
 
-                <option value="Hamilton">
-                    Hamilton
-                </option>
+                    <option value="Tauranga">
+                        Tauranga
+                    </option>
+                </select>
+            </div>
 
-                <option value="Tauranga">
-                    Tauranga
-                </option>
-            </select>
-        </div>
+            <div class="col-md-1" id="GoBtn">
+                <button type="submit" value="Search" class="action search-form__submit">
+                    <svg class="menu-button__icon" viewBox="0 0 30 30" xmlns="http://www.w3.org/2000/svg">
+                        <g stroke="#1A1919" stroke-width="2.158" fill="none" fill-rule="evenodd">
+                            <path d="M13.6 21a8 8 0 1 0 0-16 8 8 0 0 0 0 16z"></path>
+                            <path d="M19.6 19l5 5" stroke-linecap="round"></path>
+                        </g>
+                    </svg>
+                </button>
+            </div>
 
-        <div><br /></div>
-        <div class="col-1" id="GoBtn" style="display: inline">
-            <button type="submit" value="Search" class="action search-form__submit">
-                <svg class="menu-button__icon" viewBox="0 0 30 30" xmlns="http://www.w3.org/2000/svg">
-                    <g stroke="#1A1919" stroke-width="2.158" fill="none" fill-rule="evenodd">
-                        <path d="M13.6 21a8 8 0 1 0 0-16 8 8 0 0 0 0 16z"></path>
-                        <path d="M19.6 19l5 5" stroke-linecap="round"></path>
-                    </g>
-                </svg>
-            </button>
-        </div>
-
-
-        <div class="row" id="FilterOptions">
-            <div class="col-2" id="DropdownIndustry" style="display: inline">
-                <label for="Search_Industry" class="control-label"></label>
+            <!--Test
+    <div class="row" id="FilterOptions">
+        -->
+            <div class="col-md-4" id="DropdownIndustry">                
                 <select name="Search_Industry" class="form-control" id="Industry">
                     <option value="Any" selected="selected">
                         Industry
@@ -213,8 +214,7 @@
 
                 </select>
             </div>
-            <div class="col-md-4" style="display: inline">
-                <label for="Search_Topic" class="control-label"></label>
+            <div class="col-md-4" id="DropdownTopic">              
                 <select name="Search_Topic" class="form-control" id="Topic">
                     <option value="not" selected="selected">
                         Topic
@@ -527,7 +527,7 @@
 
                 </select>
             </div>
-            <div class="col-md-4" style="display: inline">
+            <div class="col-md-2" id="SelectSearchType">               
                 <select name="FilterNotices" id="filterNoticeType">
                     <option value="All" selected="selected">
                         All Notice Types
@@ -546,37 +546,6 @@
 
         </div>
     </form>
-    <div><br /></div>
-
-    <div class="rowSorting" id="SortingOptions">
-        <div class="col-md-6" style="display: inline">
-            <label class="control-label">Sorting by: </label>
-            <select name="SortDate" id="sortByDate">
-                <option value="default" selected="selected">
-                    Most Recent
-                </option>
-
-                <option value="reverse">
-                    Sort by Time
-                </option>
-            </select>
-        </div>
-        <div class="col-md-6" style="display: inline">
-            <label class="control-label">Showing result from: </label>
-            <select name="SortDate" id="sortByDate">
-                <option value="default" selected="selected">
-                    Latest 12 months
-                </option>
-                <option value="reverse">
-                    Latest 6 months
-                </option>
-                <option value="reverse">
-                    Latest 3 months
-                </option>
-            </select>
-        </div>
-    </div>
-
     <div><br /></div>
     <div><br /></div>
 
