@@ -219,6 +219,30 @@ namespace WorkSafeWebSite.Data.Migrations
                     b.ToTable("AspNetUserTokens");
                 });
 
+            modelBuilder.Entity("WorkSafeWebSite.Models.Business", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .UseIdentityColumn();
+
+                    b.Property<string>("business_Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("business_Number")
+                        .HasColumnType("int");
+
+                    b.Property<string>("industry")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("location")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Business");
+                });
+
             modelBuilder.Entity("WorkSafeWebSite.Models.PCBU", b =>
                 {
                     b.Property<int>("Id")
@@ -256,29 +280,14 @@ namespace WorkSafeWebSite.Data.Migrations
                     b.Property<int>("business_Number")
                         .HasColumnType("int");
 
-                    b.Property<string>("current_notice_status")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("current_resolve_status")
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<DateTime>("date_Issued")
                         .HasColumnType("datetime2");
-
-                    b.Property<string>("improvement_notice")
-                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("industry")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("infringements")
-                        .HasColumnType("int");
-
                     b.Property<string>("issued_To")
                         .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime?>("last_inspection")
-                        .HasColumnType("datetime2");
 
                     b.Property<string>("location")
                         .HasColumnType("nvarchar(max)");
@@ -289,7 +298,7 @@ namespace WorkSafeWebSite.Data.Migrations
                     b.Property<string>("pdf_URL")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime?>("resolved_date")
+                    b.Property<DateTime>("resolved_date")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("resolved_pdf_URL")

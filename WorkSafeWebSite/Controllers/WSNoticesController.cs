@@ -29,29 +29,29 @@ namespace WorkSafeWebSite.Controllers
         }
 
         // Shows search results on index page
-        public async Task<IActionResult> ShowSearchResults(string Search_Phrase, string Search_Location, string Search_Industry, bool notice_Picker)
+        public async Task<IActionResult> ShowSearchResults(string Search_Phrase, string Search_Location, string Search_Industry, string Search_Topic)
         {
             DateTime thisDay = DateTime.Today;
             DateTime Year_Ago = new DateTime(thisDay.Year - 1, 1, 1);
 
-            if (notice_Picker == true)
+            if (!Search_Topic.Equals("not"))
             {
                 var test = _context.WSNotice;
                 if (Search_Location.Equals("All") & Search_Industry.Equals("Any"))
                 {
-                    return View("ViewCompanyNotices", await _context.WSNotice.OrderByDescending(n => n.date_Issued).Where(n => n.business_Name.Contains(Search_Phrase) | n.topic.Contains(Search_Phrase) & n.date_Issued < thisDay & n.date_Issued > Year_Ago).ToListAsync());
+                    return View("ViewCompanyNotices", await _context.WSNotice.OrderByDescending(n => n.date_Issued).Where(n => n.topic.Contains(Search_Topic) & n.business_Name.Contains(Search_Phrase) | n.topic.Contains(Search_Phrase) & n.date_Issued < thisDay & n.date_Issued > Year_Ago).ToListAsync());
                 }
                 else if (Search_Industry.Equals("Any"))
                 {
-                    return View("ViewCompanyNotices", await _context.WSNotice.OrderByDescending(n => n.date_Issued).Where(n => n.business_Name.Contains(Search_Phrase) | n.topic.Contains(Search_Phrase) & n.location.Contains(Search_Location) & n.date_Issued < thisDay & n.date_Issued > Year_Ago).ToListAsync());
+                    return View("ViewCompanyNotices", await _context.WSNotice.OrderByDescending(n => n.date_Issued).Where(n => n.topic.Contains(Search_Topic) & n.business_Name.Contains(Search_Phrase) | n.topic.Contains(Search_Phrase) & n.location.Contains(Search_Location) & n.date_Issued < thisDay & n.date_Issued > Year_Ago).ToListAsync());
                 }
                 else if (Search_Location.Equals("All"))
                 {
-                    return View("ViewCompanyNotices", await _context.WSNotice.OrderByDescending(n => n.date_Issued).Where(n => n.business_Name.Contains(Search_Phrase) | n.topic.Contains(Search_Phrase) & n.industry.Contains(Search_Industry) & n.date_Issued < thisDay & n.date_Issued > Year_Ago).ToListAsync());
+                    return View("ViewCompanyNotices", await _context.WSNotice.OrderByDescending(n => n.date_Issued).Where(n => n.topic.Contains(Search_Topic) & n.business_Name.Contains(Search_Phrase) | n.topic.Contains(Search_Phrase) & n.industry.Contains(Search_Industry) & n.date_Issued < thisDay & n.date_Issued > Year_Ago).ToListAsync());
                 }
                 else
                 {
-                    return View("ViewCompanyNotices", await _context.WSNotice.OrderByDescending(n => n.date_Issued).Where(n => n.business_Name.Contains(Search_Phrase) | n.topic.Contains(Search_Phrase) & n.location.Contains(Search_Location) & n.industry.Contains(Search_Industry) & n.date_Issued < thisDay & n.date_Issued > Year_Ago).ToListAsync());
+                    return View("ViewCompanyNotices", await _context.WSNotice.OrderByDescending(n => n.date_Issued).Where(n => n.topic.Contains(Search_Topic) & n.business_Name.Contains(Search_Phrase) | n.topic.Contains(Search_Phrase) & n.location.Contains(Search_Location) & n.industry.Contains(Search_Industry) & n.date_Issued < thisDay & n.date_Issued > Year_Ago).ToListAsync());
                 }
             }
             else
