@@ -24,16 +24,17 @@
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" class="preload home" onload="change_title('Public Register Enforcement Notices')">
-
-
+    <br />
+    <h2 id="header-Title">Public Register Enforcement Notices</h2>
+    <div>
     <form asp-controller="WSNotices" asp-action="ShowSearchResults" class="row row-cols-lg-auto g-3 align-items-center">
         <!--test
         <div asp-validation-summary="ModelOnly" class="col-8"></div>
         -->
-        <div class="row" id="SearchOptions">
+        <div class="row" id="SearchOptions" Autocomplete="off">
             <div class="col-md-7" id="AutoComplete">
                 <label for="SearchBusiness" class="control-label"></label>
-                <input name="Search_Phrase" class="form-control" id="myInput" type="text" placeholder="Search by keyword, company, hazard, notice no." required>
+                <input name="Search_Phrase" class="form-control" id="myInput_autocomplete" type="text" placeholder="Search by keyword, company, hazard, notice no." required>
             </div>
 
             <div class="col-md-3" id="DropdownLocation">
@@ -521,7 +522,6 @@
                         Zoonosis
                     </option>
 
-
                 </select>
             </div>
             <div class="col-md-2" id="SelectSearchType">
@@ -543,6 +543,7 @@
 
         </div>
     </form>
+    </div>
     <div><br /></div>
     <div><br /></div>
 
@@ -550,20 +551,20 @@
         <div class="row" id="IntroGrid">
             <div class="col-sm-3" id="circleBase1">
                 <div class="IntroNr" style="display: inline">1</div>
-                <div class="IntroContent">Practical advice and case studies for meeting Worksafe guidelines</div>
+                <div class="IntroContent">Search for notices by keyword, company, topic or notice no</div>
             </div>
             <div class="col-1"></div>
             <div class="col-sm-3" id="circleBase2">
                 <div class="IntroNr" style="display: inline">2</div>
                 <div class="IntroContent">
-                    What this register is used for? WHo does it benefit firsthand?
+                    Enter a business name to see current and previous infringements and actions taken
                 </div>
             </div>
             <div class="col-1"></div>
             <div class="col-sm-3" id="circleBase3">
                 <div class="IntroNr" style="display: inline">3</div>
                 <div class="IntroContent">
-                    Community
+                    Enter your notice number to see how other businesses have changed their practices to make their site safe again
                 </div>
             </div>
         </div>
@@ -575,15 +576,51 @@
         <div id="Industries">
             <h2 id="IndustryAndTopicTitle">Find topic by industry</h2>
             <div class="row" id="FindTopicGrid">
-                <div class="col-sm-4"><div class="classWithPad"><a href="#" onclick="toggle_topic_visibility('Agriculture');">Agriculture</a></div></div>
-                <div class="col-sm-4"><div class="classWithPad"><a href="#" onclick="toggle_topic_visibility('Building_Construction');">Building and Construction</a></div></div>
-                <div class="col-sm-4"><div class="classWithPad"><a href="#" onclick="toggle_topic_visibility('Consumer');">Consumer</a></div></div>
-                <div class="col-sm-4"><div class="classWithPad"><a href="#" onclick="toggle_topic_visibility('Adventure_activities');">Adventure activities</a></div></div>
-                <div class="col-sm-4"><div class="classWithPad"><a href="#" onclick="toggle_topic_visibility('Consumer');">Education and training</a></div></div>
-                <div class="col-sm-4"><div class="classWithPad"><a href="#" onclick="toggle_topic_visibility('Consumer');">Fishing, hunting and trapping</a></div></div>
-                <div class="col-sm-4"><div class="classWithPad"><a href="#" onclick="toggle_topic_visibility('Consumer');">Administration and support services</a></div></div>
-                <div class="col-sm-4"><div class="classWithPad"><a href="#" onclick="toggle_topic_visibility('Consumer');">Energy</a></div></div>
-                <div class="col-sm-4"><div class="classWithPad"><a href="#" onclick="toggle_topic_visibility('Consumer');">Health care and social assistance</a></div></div>
+                <div class="col-sm-4">
+                    <div class="classWithPad">
+                        <a href="#" onclick="toggle_topic_visibility('Agriculture');">Agriculture</a>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="classWithPad">
+                        <a href="#" onclick="toggle_topic_visibility('Building_Construction');">Building and Construction</a>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="classWithPad">
+                        <a href="#" onclick="toggle_topic_visibility('Consumer');">Consumer</a>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="classWithPad">
+                        <a href="#" onclick="toggle_topic_visibility('Adventure_activities');">Adventure activities</a>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="classWithPad">
+                        <a href="#" onclick="toggle_topic_visibility('Consumer');">Education and training</a>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="classWithPad">
+                        <a href="#" onclick="toggle_topic_visibility('Consumer');">Fishing, hunting and trapping</a>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="classWithPad">
+                        <a href="#" onclick="toggle_topic_visibility('Consumer');">Administration and support services</a>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="classWithPad">
+                        <a href="#" onclick="toggle_topic_visibility('Consumer');">Energy</a>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="classWithPad">
+                        <a href="#" onclick="toggle_topic_visibility('Consumer');">Health care and social assistance</a>
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -613,7 +650,7 @@
 
             <div class="topics" id="Building_Construction" style="display: none">
                 <div class="row">
-                    <div class="col-1"><div class="backToIndustry"><a href="#" onclick="toggle_topic_visibility('Adventure_activities');">back</a></div></div>
+                    <div class="col-1"><div class="backToIndustry"><a href="#" onclick="toggle_topic_visibility('Building_Construction');">&#10094;</a></div></div>
                     <div class="row">
                         <div class="col-9">Building and Construction Topic 1</div>
                         <div class="col-9">Building and Construction Topic 2</div>
@@ -622,7 +659,7 @@
                 </div>
             </div>
 
-            </div>
+        </div>
     </div>
 
     <div><br /></div>
@@ -634,19 +671,19 @@
             <!-- Full-width images with number and caption text -->
             <div class="mySlides fade">
                 <div class="numbertext">1 / 3</div>
-                <img src="~/resources/images/pic02.jpg" style="width:100%">
+                <img src="~/resources/images/pic02.jpg" style="width: 100%; height: 300px;">
                 <div class="text">Caption Text</div>
             </div>
 
             <div class="mySlides fade">
                 <div class="numbertext">2 / 3</div>
-                <img src="~/resources/images/pic03.jpg" style="width:100%">
+                <img src="~/resources/images/pic03.jpg" style="width:100%; height: 300px;">
                 <div class="text">Caption Two</div>
             </div>
 
             <div class="mySlides fade">
                 <div class="numbertext">3 / 3</div>
-                <img src="~/resources/images/pic04.jpg" style="width:100%">
+                <img src="~/resources/images/pic04.jpg" style="width: 100%; height: 300px;">
                 <div class="text">Caption Three</div>
             </div>
 
@@ -664,38 +701,6 @@
         </div>
     </div>
 
-    </div>
-
-    <!---Remove moving box
-    <div>
-
-        <div id="myBtnContainer">
-            <button class="btn active" onclick="filterSelection('all')"> Show all</button>
-            <button class="btn" onclick="filterSelection('Topic')"> Topic</button>
-            <button class="btn" onclick="filterSelection('Industry')"> Industry</button>
-        </div>
-
-        <div class="TopicandIndustryContainer">
-            <div class="filterDiv Topic">Air quality</div>
-            <div class="filterDiv Topic">Building restraint</div>
-            <div class="filterDiv Topic">Amusement devices</div>
-            <div class="filterDiv Topic">Asbestos</div>
-            <div class="filterDiv Topic">Biological</div>
-            <div class="filterDiv Topic">Boilers</div>
-            <div class="filterDiv Topic">Bullying</div>
-            <div class="filterDiv Industry">Administration and support services</div>
-            <div class="filterDiv Industry">Agriculture</div>
-            <div class="filterDiv Industry">Arts and recreation</div>
-            <div class="filterDiv Industry">Consumer</div>
-            <div class="filterDiv Industry">Education and training</div>
-            <div class="filterDiv Industry">Energy</div>
-        </div>
-
-        <a asp-action="Index">Back to List</a>
-    </div>
-    --->
-    <!--Test slideshow-->
-    
 </body>
 
 
