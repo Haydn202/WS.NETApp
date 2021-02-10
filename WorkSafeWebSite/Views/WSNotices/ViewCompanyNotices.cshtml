@@ -26,8 +26,7 @@
     <link rel="stylesheet" type="text/css" href="~/css/style-f962a90.css" media="screen" />
 </head>
 
-
-<h1>Notices</h1>
+<h3>Notices</h3>
 
 <table>
     <thead>
@@ -53,8 +52,8 @@
                         <div class="col-4">Prohibtion Notice # xxxxxx: </div>
                         <a asp-action="NavigateToNoticeDtails" asp-route-id="@item.Id">Details</a>
                         <a href='@Url.Content("~/PDF_Folder/"+ item.pdf_URL)' target="_blank">
-                    Download
-                </a>
+                            Download
+                        </a>
                         <div class="col-8"></div>
 
                         <div class="col-12">Summery: Unsafe Asbestos removal carried out by unqualified asbestos removalist</div>

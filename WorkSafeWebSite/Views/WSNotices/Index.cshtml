@@ -549,7 +549,6 @@
                 <option value="default" selected="selected">
                     Most Recent
                 </option>
-
                 <option value="reverse">
                     Sort by Time
                 </option>
@@ -577,6 +576,7 @@
         <a asp-action="Create">Create New</a>
     </p>
     -->
+    
     <!--flowing are old search result table to be changed with business cards-->
     <table>
         <thead>
@@ -587,6 +587,7 @@
             
             @foreach (var item in Model)
             {
+                
                 <tr>
                     <div class="rowBusinessCards">
                         <div class="card">
@@ -603,6 +604,7 @@
                     <div><br /></div>
                 </tr>
             }
+
         </tbody>
     </table>
 
