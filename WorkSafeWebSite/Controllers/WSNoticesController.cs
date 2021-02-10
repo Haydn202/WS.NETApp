@@ -83,10 +83,6 @@ namespace WorkSafeWebSite.Controllers
             //Takes Id of company clicked and finds it in the company db, then uses that to create a string with the propper company name.
             var pCBU = await _context.PCBU.FirstOrDefaultAsync(m => m.Id == id);
             string name = pCBU.business_Name;
-            
-            var test = await _context.WSNotice.OrderByDescending
-                (n => n.date_Issued).Where(n => n.business_Name.Equals(name)
-                & n.date_Issued < thisDay & n.date_Issued > Year_Ago).ToListAsync();
 
             //Finds that companies notices and displays them, by most recent to oldest.
             return View("ViewCompanyNotices", await _context.WSNotice.OrderByDescending
