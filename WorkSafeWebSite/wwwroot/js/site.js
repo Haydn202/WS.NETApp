@@ -2,8 +2,13 @@
 // for details on configuring this project to bundle and minify static web assets.
 
 // Write your JavaScript code.
-/* click and hide Topic*/
+/* change title on load */
+function change_title(new_Title) {
+    document.getElementById('header-Title').innerHTML = new_Title;
+}
 
+
+/* click and hide Topic*/
 function toggle_topic_visibility(id) {
     var industry = document.getElementById('FindTopicGrid');
     var showTopic = document.getElementById(id);

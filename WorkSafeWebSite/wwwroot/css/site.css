@@ -3,6 +3,17 @@ for details on configuring this project to bundle and minify static web assets. 
 
 
 /* css added VUW*/
+/*_Layout updates*/
+#newHeader_with_img {
+    padding: 0px;
+    background-image: url('../resources/images/Asset-1.png');
+    background-size:cover;
+    background-repeat: no-repeat;
+}
+#header-Title {
+    text-align: center;
+}
+
 /*-------page2----------*/
 #rowBusinessCards {
     background-color: #F8FAFA;
@@ -10,10 +21,8 @@ for details on configuring this project to bundle and minify static web assets. 
 #rowBusinessCards {
     background-color: #F8FAFA;
 }
-
-
-#filterIndustry, #filterNoticeType, #filterTopics {
-    background-color: #E4ECFF;
+#filterNoticeType select {
+    background-color: #fff;
 }
 
 #FilterOptions {   
@@ -37,25 +46,25 @@ for details on configuring this project to bundle and minify static web assets. 
         }
 
 #SortingOptions {
+    width: 100%;
     height: calc(1.5em + .75rem + 2px);
     width: 100%;
     font-size: 1rem;
-    font-weight: 400;    
+    font-weight: 400;
     text-align: center;
-    
 }
     #SortingOptions select {
         border: 1px solid #ced4da;
         padding: .375rem .75rem;
         line-height: 1.5;
         border-radius: .25rem;
+        background-color: #E4ECFF;
     }
     #SortingOptions label {
         font-weight: bold;
     }
 
 /*------page1----------*/
-/*------stype from 1st page-----*/
 #SelectSearchType select {
     height: calc(1.5em + .75rem + 2px);
     border: 1px solid #ced4da;
@@ -130,8 +139,6 @@ for details on configuring this project to bundle and minify static web assets. 
     background-color: #ED7F19;
 }
 
-
-
 /*moving container --not in use needs to be clear out*/
 .filterDiv {
     float: left;
@@ -176,10 +183,7 @@ h2.headertekst {
     text-align: center;
 }
 
-.container {
-    margin-top: 20px;
-    overflow: hidden;
-}
+
 
 thead,
 tfoot {

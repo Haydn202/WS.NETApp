@@ -23,10 +23,7 @@
 
 </head>
 
-<hr />
-
-
-<body itemscope itemtype="http://schema.org/WebPage" class="preload home">
+<body itemscope itemtype="http://schema.org/WebPage" class="preload home" onload="change_title('Public Register Enforcement Notices')">
 
 
     <form asp-controller="WSNotices" asp-action="ShowSearchResults" class="row row-cols-lg-auto g-3 align-items-center">
@@ -528,7 +525,7 @@
                 </select>
             </div>
             <div class="col-md-2" id="SelectSearchType">               
-                <select name="FilterNotices" id="filterNoticeType">
+                <select name="FilterNotices" class="form-control" id="filterNoticeType">
                     <option value="All" selected="selected">
                         All Notice Types
                     </option>
