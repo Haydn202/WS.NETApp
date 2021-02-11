@@ -25,11 +25,12 @@
 </head>
 
 <body onload="change_title('Public Register Enforcement Notices')">
+
+    <h2 id="header-Title">Public Register Enforcement Notices</h2>
     <br />
     <h3>Search Results</h3>
 
     <form asp-controller="WSNotices" asp-action="ShowSearchResults" class="row row-cols-lg-auto g-3 align-items-center">
-
         <div class="row" id="SearchOptions">
             <div class="col-md-7" id="AutoComplete">
                 <label for="SearchBusiness" class="control-label"></label>
@@ -576,7 +577,6 @@
         <a asp-action="Create">Create New</a>
     </p>
     -->
-    
     <!--flowing are old search result table to be changed with business cards-->
     <table>
         <thead>
@@ -584,10 +584,10 @@
             </tr>
         </thead>
         <tbody>
-            
+
             @foreach (var item in Model)
             {
-                
+
                 <tr>
                     <div class="rowBusinessCards">
                         <div class="card">
