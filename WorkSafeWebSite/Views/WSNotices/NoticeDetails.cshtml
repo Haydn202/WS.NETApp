@@ -56,7 +56,17 @@
     <span style="float:right;">
         <label>Isued: @Html.DisplayFor(modelItem => Model.date_Issued) </label>
         <br />
-        <label>Improvement Notice: @Html.DisplayFor(modelItem => Model.improvement_notice) </label>
+        <label>
+            Improvement Notice: @Html.DisplayFor(modelItem => Model.improvement_notice)
+            @if (Model.improvement_notice == "site reopened")
+            {
+                <img src="~/resources/images/green_circle.svg" />
+            }
+            else
+            {
+                <img src="~/resources/images/Red_Circle(small).svg" />
+            }
+        </label>
     </span>
     <br />
 
