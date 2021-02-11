@@ -246,11 +246,22 @@ a {
     margin: 10px;
     padding: 10px;
     background-color: #f7f9e3;
+    text-align: center;
 }
     .classWithPad:hover {
         background: #ED7F19;
+        text-align: center;
     }
 
+.backToIndustry {
+    background-color: #E4ECFF;
+    height: 100%;
+    text-align: center;
+}
+    .backToIndustry:hover {
+        background: #ED7F19;
+        text-align: center;
+    }
 /*moving container --not in use needs to be clear out*/
 .filterDiv {
     float: left;

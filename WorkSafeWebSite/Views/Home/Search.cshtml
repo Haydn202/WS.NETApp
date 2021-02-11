@@ -20,7 +20,18 @@
     <link rel="stylesheet" type="text/css" href="https://cloud.typography.com/7083976/7810172/css/fonts.css" />
     <link rel="stylesheet" type="text/css" href="~/css/site.css" />
     <link rel="stylesheet" type="text/css" href="~/css/style-f962a90.css" media="screen" />
-
+    <!--Autocomplete using JqueryUI-->
+    <link rel="stylesheet" href="~/css/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script>
+        $(function () {
+            var availableTags = ["2degrees", "AFFCO Holdings", "AHI Roofing", "Air New Zealand Ltd", "Airwork", "Alliance Group", "Auckland Airport Ltd", "Aurora Energy", "Baby on the Move", "Bank of New Zealand", "Barfoot & Thompson", "Black + White Mobile", "Blis Technologies Ltd", "Bridget Williams Books", "Cavalier Corporation", "Cloudy Bay Vineyards", "Contact Energy Ltd", "Datacom Group", "Daltons Ltd", "Designline", "Eurekster", "Fisher & Paykel Appliances Holdings", "Fisher & Paykel Healthcare", "Fletcher Building Ltd", "Fletcher Challenge", "Fonterra Co-operative Group Ltd", "Foodstuffs (NZ) Ltd",];
+            $("#tags").autocomplete({
+                source: availableTags
+            });
+        });
+    </script>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" class="preload home" onload="change_title('Public Register Enforcement Notices')">
@@ -34,7 +45,7 @@
         <div class="row" id="SearchOptions" Autocomplete="off">
             <div class="col-md-7" id="AutoComplete">
                 <label for="SearchBusiness" class="control-label"></label>
-                <input name="Search_Phrase" class="form-control" id="myInput_autocomplete" type="text" placeholder="Search by keyword, company, hazard, notice no." required>
+                <input name="Search_Phrase" class="form-control" id="tags" type="text" placeholder="Search by keyword, company, hazard, notice no." required>
             </div>
 
             <div class="col-md-3" id="DropdownLocation">
@@ -78,8 +89,8 @@
             </div>
 
             <!--Test
-            <div class="row" id="FilterOptions">
-                -->
+    <div class="row" id="FilterOptions">
+        -->
             <div class="col-md-4" id="DropdownIndustry">
                 <select name="Search_Industry" class="form-control" id="Industry">
                     <option value="Any" selected="selected">
@@ -626,21 +637,22 @@
 
         <div class="Topics">
             <div class="topics" id="Agriculture" style="display: none">
-
                 <div class="row">
-                    <div class="col-1"><div class="backToIndustry"><a href="#" onclick="toggle_topic_visibility('Agriculture');">&#10094;</a></div></div>
-                    <div class="row">
-                        <div class="col-9">
+                    <div class="col-sm-1">
+                        <div class="backToIndustry"><a href="#" onclick="toggle_topic_visibility('Agriculture');">&#10094;</a></div>
+                    </div>
+                    <div class="col-sm-9">                        
+                        <div class="col-sm-8">
                             <a href="https://www.worksafe.govt.nz/topic-and-industry/agriculture/keeping-safe-on-farms/" target="_blank">
                                 Keeping Safe on Farm
                             </a>
                         </div>
-                        <div class="col-9">
+                        <div class="col-sm-8">
                             <a href="https://www.worksafe.govt.nz/topic-and-industry/agriculture/keep-safe-keep-farming-toolkit/" target="_blank">
                                 Keep Safe, Keep Farming Tool Kit
                             </a>
                         </div>
-                        <div class="col-9">
+                        <div class="col-sm-8">
                             <a href="https://www.worksafe.govt.nz/topic-and-industry/agriculture/farm-vehicles/" target="_blank">
                                 Vehicles on Farm
                             </a>
@@ -651,19 +663,21 @@
 
             <div class="topics" id="Adventure_activities" style="display: none">
                 <div class="row">
-                    <div class="col-1"><div class="backToIndustry"><a href="#" onclick="toggle_topic_visibility('Agriculture');">&#10094;</a></div></div>
-                    <div class="row">
-                        <div class="col-9">
+                    <div class="col-sm-1">
+                        <div class="backToIndustry"><a href="#" onclick="toggle_topic_visibility('Adventure_activities');">&#10094;</a></div>                        
+                    </div>
+                    <div class="col-sm-9">
+                        <div class="col-sm-8">
                             <a href="https://www.worksafe.govt.nz/topic-and-industry/adventure-activities/guidance-for-pcbus/" target="_blank">
                                 Guidance For PCBUs
                             </a>
                         </div>
-                        <div class="col-9">
+                        <div class="col-sm-8">
                             <a href="https://www.worksafe.govt.nz/topic-and-industry/adventure-activities/what-is-an-adventure-activity/" target="_blank">
                                 What Is an Adventure Activity
                             </a>
                         </div>
-                        <div class="col-9">
+                        <div class="col-sm-8">
                             <a href="https://www.worksafe.govt.nz/topic-and-industry/adventure-activities/information-for-schools-education-providers-and-clubs/" target="_blank">
                                 information for Schools Education Providers and Clubs
                             </a>
@@ -674,19 +688,19 @@
 
             <div class="topics" id="Building_Construction" style="display: none">
                 <div class="row">
-                    <div class="col-1"><div class="backToIndustry"><a href="#" onclick="toggle_topic_visibility('Agriculture');">&#10094;</a></div></div>
-                    <div class="row">
-                        <div class="col-9">
+                    <div class="col-sm-1"><div class="backToIndustry"><a href="#" onclick="toggle_topic_visibility('Building_Construction');">&#10094;</a></div></div>
+                    <div class="col-sm-9">
+                        <div class="col-sm-8">
                             <a href="https://www.worksafe.govt.nz/topic-and-industry/building-and-construction/absolutely-essential-toolkit/" target="_blank">
                                 Absolutely Essential Toolkit
                             </a>
                         </div>
-                        <div class="col-9">
+                        <div class="col-sm-8">
                             <a href="https://www.worksafe.govt.nz/topic-and-industry/building-and-construction/facilities-on-construction-sites/" target="_blank">
                                 Facilities On Construction Sites
                             </a>
                         </div>
-                        <div class="col-9">
+                        <div class="col-sm-8">
                             <a href="https://www.worksafe.govt.nz/managing-health-and-safety/getting-started/understanding-the-law/overlapping-duties/pcbus-working-together-advice-when-contracting/" target="_blank">
                                 Pcbus Working Together Advice When Contracting
                             </a>
@@ -695,7 +709,7 @@
                 </div>
             </div>
         </div>
-           
+     </div>    
 
     <div><br /></div>
     <div>

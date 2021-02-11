@@ -22,6 +22,19 @@
     <link rel="stylesheet" type="text/css" href="https://cloud.typography.com/7083976/7810172/css/fonts.css" />
     <link rel="stylesheet" type="text/css" href="~/css/site.css" />
     <link rel="stylesheet" type="text/css" href="~/css/style-f962a90.css" media="screen" />
+
+    <!--Autocomplete using JqueryUI-->
+    <link rel="stylesheet" href="~/css/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script>
+        $(function () {
+            var availableTags = ["2degrees", "AFFCO Holdings", "AHI Roofing", "Air New Zealand Ltd", "Airwork", "Alliance Group", "Auckland Airport Ltd", "Aurora Energy", "Baby on the Move", "Bank of New Zealand", "Barfoot & Thompson", "Black + White Mobile", "Blis Technologies Ltd", "Bridget Williams Books", "Cavalier Corporation", "Cloudy Bay Vineyards", "Contact Energy Ltd", "Datacom Group", "Daltons Ltd", "Designline", "Eurekster", "Fisher & Paykel Appliances Holdings", "Fisher & Paykel Healthcare", "Fletcher Building Ltd", "Fletcher Challenge", "Fonterra Co-operative Group Ltd", "Foodstuffs (NZ) Ltd",];
+            $("#tags").autocomplete({
+                source: availableTags
+            });
+        });
+    </script>
 </head>
 
 <body onload="change_title('Public Register Enforcement Notices')">
@@ -34,7 +47,7 @@
         <div class="row" id="SearchOptions">
             <div class="col-md-7" id="AutoComplete">
                 <label for="SearchBusiness" class="control-label"></label>
-                <input name="Search_Phrase" class="form-control" id="myInput" type="text" placeholder="Search by keyword, company, hazard, notice no." required>
+                <input name="Search_Phrase" class="form-control" id="tags" type="text" placeholder="Search by keyword, company, hazard, notice no." required>
             </div>
 
             <div class="col-md-3" id="DropdownLocation">

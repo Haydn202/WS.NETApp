@@ -113,6 +113,37 @@ for (var i = 0; i < btns.length; i++) {
     });
 }
 
+/*new autocomplete in search*/
+$(function () {
+    var availableTags = [
+        "ActionScript",
+        "AppleScript",
+        "Asp",
+        "BASIC",
+        "C",
+        "C++",
+        "Clojure",
+        "COBOL",
+        "ColdFusion",
+        "Erlang",
+        "Fortran",
+        "Groovy",
+        "Haskell",
+        "Java",
+        "JavaScript",
+        "Lisp",
+        "Perl",
+        "PHP",
+        "Python",
+        "Ruby",
+        "Scala",
+        "Scheme"
+    ];
+    $("#tags").autocomplete({
+        source: availableTags
+    });
+});
+
 /* Autocomplete in Search page*/
 
 function autocomplete(inp, arr) {
