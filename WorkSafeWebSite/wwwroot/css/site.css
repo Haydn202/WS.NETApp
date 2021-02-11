@@ -18,7 +18,7 @@ for details on configuring this project to bundle and minify static web assets. 
 /* add test slideshow page 2*/
 /* Slideshow container */
 .slideshow-container {
-    max-height:300px;
+    max-height:700px;
     position: relative;
     margin: auto;
 }
@@ -89,6 +89,7 @@ for details on configuring this project to bundle and minify static web assets. 
 
     .active, .dot:hover {
         background-color: #717171;
+        
     }
 
 /* Fading animation */
