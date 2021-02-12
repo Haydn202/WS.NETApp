@@ -95,9 +95,9 @@ for details on configuring this project to bundle and minify static web assets. 
 /* Fading animation */
 .fade {
     -webkit-animation-name: fade;
-    -webkit-animation-duration: 1.5s;
+    -webkit-animation-duration: 2s;
     animation-name: fade;
-    animation-duration: 1.5s;
+    animation-duration: 2s;
 }
 
 @-webkit-keyframes fade {

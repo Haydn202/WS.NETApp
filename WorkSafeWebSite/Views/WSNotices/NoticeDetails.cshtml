@@ -57,7 +57,7 @@
         <label>Isued: @Html.DisplayFor(modelItem => Model.date_Issued) </label>
         <br />
         <label>
-            Improvement Notice: @Html.DisplayFor(modelItem => Model.improvement_notice)
+            Status: @Html.DisplayFor(modelItem => Model.improvement_notice)
             @if (Model.improvement_notice == "site reopened")
             {
                 <img src="~/resources/images/green_circle.svg" />
@@ -85,7 +85,7 @@
     <span style="float:right;">
         <label>Isued: @Html.DisplayFor(modelItem => Model.resolved_date) </label>
         <br />
-        <label>Improvement Notice: @Html.DisplayFor(modelItem => Model.improvement_notice) </label>
+        <label>Status: @Html.DisplayFor(modelItem => Model.improvement_notice) </label>
     </span>
     <br />
     <label>notice_Type : @Html.DisplayFor(modelItem => Model.resolved_pdf_URL)</label>
